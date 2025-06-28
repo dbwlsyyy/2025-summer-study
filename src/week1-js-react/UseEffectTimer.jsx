@@ -34,7 +34,7 @@ function UseEffectTimer() {
         <div>
             <h2>클린업 함수 확인</h2>
             <button onClick={() => setIsVisible(!isVisible)}>
-                컴포넌트! {isVisible ? '숨기기' : '보이기'}
+                컴포넌트 {isVisible ? '숨기기' : '보이기'}
             </button>
 
             {isVisible && (

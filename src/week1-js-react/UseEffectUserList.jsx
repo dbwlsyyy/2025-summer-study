@@ -38,8 +38,8 @@ function UseEffectUserList() {
                     height: '200px',
                 }}
             >
-                <ClipLoader color="#36d7b7" size={150} />
-                {/* 👈 스피너 컴포넌트! */}
+                <ClipLoader color="#36d7b7" size={120} />
+                {/* 스피너 컴포넌트 */}
                 {/* color: 스피너 색상, size: 크기 (px 단위) */}
             </div>
         );
