@@ -4,6 +4,7 @@ import { ThemeContext } from './ThemeContext'; // ThemeContext 임포트
 
 function Footer() {
     const { isDark } = useContext(ThemeContext); // isDark 상태만 가져옴
+    // const isDark = useThemeStore((state) => state.isDark);
 
     const footerStyle = {
         backgroundColor: isDark ? '#222' : '#e0e0e0', // 다크 모드면 더 어둡게, 아니면 밝게

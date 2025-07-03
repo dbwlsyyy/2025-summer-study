@@ -1,10 +1,13 @@
-// Header.js
 import React, { useContext } from 'react';
 import { ThemeContext } from './ThemeContext'; // ThemeContext 임포트
+//import useThemeStore from './ThemeStore'; // zustand 스토어 임포트
 
 function Header() {
     // useContext 훅으로 ThemeContext의 value를 가져옴
     const { isDark, setIsDark } = useContext(ThemeContext);
+
+    // const isDark = useThemeStore((state) => state.isDark);
+    // const setIsDark = useThemeStore((state) => state.toggleTheme);
 
     const headerStyle = {
         backgroundColor: isDark ? '#333' : '#f0f0f0', // 다크 모드면 어둡게, 아니면 밝게

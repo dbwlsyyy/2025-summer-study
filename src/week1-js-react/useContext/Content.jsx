@@ -4,6 +4,7 @@ import { ThemeContext } from './ThemeContext'; // ThemeContext 임포트
 
 function Content() {
     const { isDark } = useContext(ThemeContext); // isDark 상태만 가져옴
+    //const isDark = useThemeStore((state) => state.isDark);
 
     const contentStyle = {
         backgroundColor: isDark ? '#444' : '#fff', // 다크 모드면 중간 어둡기, 아니면 흰색
