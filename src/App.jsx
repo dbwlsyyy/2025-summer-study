@@ -5,6 +5,7 @@ import UseEffectTimer from './week1-js-react/useEffect/UseEffectTimer';
 import UseEffectMouse from './week1-js-react/useEffect/UseEffectMouse';
 import Calculate from './week1-js-react/useMemo/Calculate';
 import RenderBox from './week1-js-react/useCallback/RenderBox';
+import DarkMode from './week1-js-react/useContext/DarkMode';
 
 function App() {
     return (
@@ -28,6 +29,9 @@ function App() {
                     <button className="btn">
                         <Link to="/renderBox">renderBox 실습</Link>
                     </button>
+                    <button className="btn">
+                        <Link to="/darkMode">darkMode 실습</Link>
+                    </button>
                 </nav>
 
                 <Routes>
@@ -36,6 +40,7 @@ function App() {
                     <Route path="/mouseTracker" element={<UseEffectMouse />} />
                     <Route path="/calculate" element={<Calculate />} />
                     <Route path="/renderBox" element={<RenderBox />} />
+                    <Route path="/darkMode" element={<DarkMode />} />
                 </Routes>
             </div>
         </Router>
