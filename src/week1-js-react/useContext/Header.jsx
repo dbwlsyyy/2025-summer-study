@@ -22,7 +22,7 @@ function Header() {
 
     return (
         <header style={headerStyle}>
-            <h2>{isDark ? '다크 모드' : '라이트 모드'} 활성화</h2>
+            <h2 id="time">{isDark ? '다크 모드' : '라이트 모드'} 활성화</h2>
             <button
                 onClick={() => setIsDark(!isDark)} // setIsDark 함수로 isDark 상태 토글
                 style={{

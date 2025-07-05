@@ -6,6 +6,9 @@ import UseEffectMouse from './week1-js-react/useEffect/UseEffectMouse';
 import Calculate from './week1-js-react/useMemo/Calculate';
 import RenderBox from './week1-js-react/useCallback/RenderBox';
 import DarkMode from './week1-js-react/useContext/DarkMode';
+import MissonApi from './week1-js-react/useEffect/MissonApi';
+import MissionUseEffect from './week1-js-react/useEffect/MissionUseEffect';
+import MissionChat from './week1-js-react/useEffect/MissionChat';
 
 function App() {
     return (
@@ -26,11 +29,27 @@ function App() {
                     <button className="btn">
                         <Link to="/calculate">calculate 실습</Link>
                     </button>
+
                     <button className="btn">
                         <Link to="/renderBox">renderBox 실습</Link>
                     </button>
                     <button className="btn">
                         <Link to="/darkMode">darkMode 실습</Link>
+                    </button>
+
+                    <hr />
+                    <button className="btn" style={{ backgroundColor: '#eee' }}>
+                        <Link to="/useEffect-mission">useEffect 미션</Link>
+                    </button>
+                    <button className="btn" style={{ backgroundColor: '#eee' }}>
+                        <Link to="/useEffect-mission-api">
+                            useEffect API 미션
+                        </Link>
+                    </button>
+                    <button className="btn" style={{ backgroundColor: '#eee' }}>
+                        <Link to="/useEffect-mission-chat">
+                            useEffect 채팅 미션
+                        </Link>
                     </button>
                 </nav>
 
@@ -39,6 +58,18 @@ function App() {
                     <Route path="/userList" element={<UseEffectUserList />} />
                     <Route path="/mouseTracker" element={<UseEffectMouse />} />
                     <Route path="/calculate" element={<Calculate />} />
+                    <Route
+                        path="/useEffect-mission"
+                        element={<MissionUseEffect />}
+                    />
+                    <Route
+                        path="/useEffect-mission-API"
+                        element={<MissonApi />}
+                    />
+                    <Route
+                        path="/useEffect-mission-chat"
+                        element={<MissionChat />}
+                    />
                     <Route path="/renderBox" element={<RenderBox />} />
                     <Route path="/darkMode" element={<DarkMode />} />
                 </Routes>
