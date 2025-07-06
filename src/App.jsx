@@ -3,13 +3,15 @@ import './App.css';
 import UseEffectUserList from './week1-js-react/useEffect/UseEffectUserList';
 import UseEffectTimer from './week1-js-react/useEffect/UseEffectTimer';
 import UseEffectMouse from './week1-js-react/useEffect/UseEffectMouse';
-import Calculate from './week1-js-react/useMemo/Calculate';
+import UseMemoCalculate from './week1-js-react/useCallback/UseMemoCalculate';
 import RenderBox from './week1-js-react/useCallback/RenderBox';
 import DarkMode from './week1-js-react/useContext/DarkMode';
-import MissonApi from './week1-js-react/useEffect/MissonApi';
-import MissionUseEffect from './week1-js-react/useEffect/MissionUseEffect';
-import MissionChat from './week1-js-react/useEffect/MissionChat';
-import MissionMovie from './week1-js-react/useEffect/MissionMovie';
+import MissonApi from './week2-react/useEffect/MissonApi';
+import MissionUseEffect from './week2-react/useEffect/MissionUseEffect';
+import MissionChat from './week2-react/useEffect/MissionChat';
+import MissionMovie from './week2-react/useEffect/MissionMovie';
+import MissionUseCallback1 from './week2-react/useMemo_useCallback/Mission1/MissionUseCallback1';
+import MissionUseCallback2 from './week2-react/useMemo_useCallback/Mssion2/MissionUseCallback2';
 
 function App() {
     return (
@@ -57,13 +59,25 @@ function App() {
                             useEffect 무비 앱 미션
                         </Link>
                     </button>
+                    <button className="btn" style={{ backgroundColor: '#eee' }}>
+                        <Link to="/useCallback-mission1">
+                            useCallback 미션 1
+                        </Link>
+                    </button>
+                    <button className="btn" style={{ backgroundColor: '#eee' }}>
+                        <Link to="/useCallback-mission2">
+                            useCallback 미션 2
+                        </Link>
+                    </button>
                 </nav>
 
                 <Routes>
                     <Route path="/timer" element={<UseEffectTimer />} />
                     <Route path="/userList" element={<UseEffectUserList />} />
                     <Route path="/mouseTracker" element={<UseEffectMouse />} />
-                    <Route path="/calculate" element={<Calculate />} />
+                    <Route path="/calculate" element={<UseMemoCalculate />} />
+                    <Route path="/renderBox" element={<RenderBox />} />
+                    <Route path="/darkMode" element={<DarkMode />} />
                     <Route
                         path="/useEffect-mission"
                         element={<MissionUseEffect />}
@@ -80,8 +94,14 @@ function App() {
                         path="/useEffect-mission-movie"
                         element={<MissionMovie />}
                     />
-                    <Route path="/renderBox" element={<RenderBox />} />
-                    <Route path="/darkMode" element={<DarkMode />} />
+                    <Route
+                        path="/useCallback-mission1"
+                        element={<MissionUseCallback1 />}
+                    />
+                    <Route
+                        path="/useCallback-mission2"
+                        element={<MissionUseCallback2 />}
+                    />
                 </Routes>
             </div>
         </Router>

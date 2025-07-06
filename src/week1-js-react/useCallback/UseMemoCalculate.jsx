@@ -13,7 +13,7 @@ const easyCalulate = (num) => {
     return num + 1;
 };
 
-function Calculate() {
+function UseMemoCalculate() {
     const [hardNum, setHardNum] = useState(1);
     const [easyNum, setEasyNum] = useState(1);
 
@@ -52,4 +52,4 @@ function Calculate() {
     );
 }
 
-export default Calculate;
+export default UseMemoCalculate;
