@@ -15,13 +15,28 @@ useEffect
 
 useMemo
 
--   [계산기 실습](./src/week1-js-react/useMemo/Calculate.jsx)
+-   [계산기 실습](./src/week1-js-react/useCallback/UseMemoCalculate.jsx)
 
 useCallback
 
 -   [박스키우기 실습](./src/week1-js-react/useCallback/RenderBox.jsx)
--   [ 실습]()
 
-## Week 2 - 타입스크립트
+useContext
 
--   [기본 타입스크립트](./week2-router/basic-routing.jsx)
+-   [다크모드 실습](./src/week1-js-react/useContext/DarkMode.jsx)
+
+## Week 2 - 리액트 미션
+
+useEffect
+
+-   [3개의 연습용 미션](./src/week2-react/useEffect/MissionUseEffect.jsx)
+-   [비동기 처리 (API 호출) 미션](./src/week2-react/useEffect/MissonApi.jsx)
+-   [채팅 (최하단 스크롤) 미션](./src/week2-react/useEffect/MissionChat.jsx)
+-   [활용 실무 미션 - 무비 앱 (영화 검색)](./src/week2-react/useEffect/MissionMovie.jsx)
+
+useMemo, useCallback, React.memo
+
+-   [memorize 유저 미션](./src/week2-react/useMemo_useCallback/Mission1/MissionUseCallback1.jsx)
+-   [활용 실무 미션 - 앱 성능 최적화 (HOC)](./src/week2-react/useMemo_useCallback/Mssion2/MissionUseCallback2.jsx)
+
+useContext
