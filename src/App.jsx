@@ -9,6 +9,7 @@ import DarkMode from './week1-js-react/useContext/DarkMode';
 import MissonApi from './week1-js-react/useEffect/MissonApi';
 import MissionUseEffect from './week1-js-react/useEffect/MissionUseEffect';
 import MissionChat from './week1-js-react/useEffect/MissionChat';
+import MissionMovie from './week1-js-react/useEffect/MissionMovie';
 
 function App() {
     return (
@@ -51,6 +52,11 @@ function App() {
                             useEffect 채팅 미션
                         </Link>
                     </button>
+                    <button className="btn" style={{ backgroundColor: '#eee' }}>
+                        <Link to="/useEffect-mission-movie">
+                            useEffect 무비 앱 미션
+                        </Link>
+                    </button>
                 </nav>
 
                 <Routes>
@@ -69,6 +75,10 @@ function App() {
                     <Route
                         path="/useEffect-mission-chat"
                         element={<MissionChat />}
+                    />
+                    <Route
+                        path="/useEffect-mission-movie"
+                        element={<MissionMovie />}
                     />
                     <Route path="/renderBox" element={<RenderBox />} />
                     <Route path="/darkMode" element={<DarkMode />} />
