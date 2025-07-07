@@ -11,7 +11,7 @@ const products = [
         name: '버뮤다 팬츠',
         price: 45000,
         imageUrl:
-            'https://img.29cm.co.kr/item/202406/11ef2c5022ee8f23bb1403678b4cc49f.jpg?width=700&format=webp',
+            'https://m.theuniform.co.kr/web/product/big/202312/70ed849130481ea56d4c9e1c6eecd88c.jpg',
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const products = [
         name: '신상 신발',
         price: 99000,
         imageUrl:
-            'https://static.shoeprize.com/open_raffle/main_carousel/None/JQ4774-shoeprize-ADIDAS-ORIGINALS-TAEKWONDO-WMNS-CLOUD-WHITE-413708-1717488129214.webp',
+            'https://img.danawa.com/prod_img/500000/316/998/img/65998316_2.jpg?shrink=360:360&_v=20240910132448',
     },
 ];
 

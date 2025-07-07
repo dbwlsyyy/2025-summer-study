@@ -66,6 +66,19 @@
     transition: background-color 0.3s ease;
 }
 
+.disabled {
+    background-color: #cbcbcb;
+}
 .checkout-button:hover {
     background-color: #27ae60;
+}
+
+.disabled:hover {
+    background-color: #cbcbcb;
+}
+.clear-cart {
+    color: #7c7c7c;
+    text-decoration: underline;
+    font-weight: 500;
+    cursor: pointer;
 }

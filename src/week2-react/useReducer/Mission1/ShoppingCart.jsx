@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import ProductCard from './ProductCard';
 import CartItem from './CartItem';
 import Modal from './Modal';
@@ -13,7 +13,9 @@ function ShoppingCart() {
     const initialState = {
         items: [],
         isOpen: false,
+        orderForm: {},
     };
+
     const reducer = (state, action) => {
         switch (action.type) {
             case 'add-item': {
@@ -60,20 +62,47 @@ function ShoppingCart() {
                     items: state.items.filter((item) => item.id !== product.id),
                 };
             }
+            case 'clear-cart': {
+                return {
+                    ...state,
+                    items: [],
+                };
+            }
+            case 'open-modal': {
+                return {
+                    ...state,
+                    isOpen: true,
+                };
+            }
+            case 'close-modal': {
+                return {
+                    ...state,
+                    isOpen: false,
+                    orderForm: {},
+                };
+            }
+            case 'update-order': {
+                return {
+                    ...state,
+                    orderForm: action.payload,
+                };
+            }
             default:
                 return state;
         }
     };
 
-    const [cartItems, dispatch] = useReducer(reducer, initialState);
-    const totalAmount = cartItems.items.reduce(
+    const [cart, dispatch] = useReducer(reducer, initialState);
+    const totalAmount = cart.items.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
     );
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const openModal = () => {
+        dispatch({ type: 'open-modal' });
+    };
+    const closeModal = () => {
+        dispatch({ type: 'close-modal' });
+    };
 
     return (
         <div className="shopping-cart-container">
@@ -92,13 +121,13 @@ function ShoppingCart() {
 
             <div className="cart-section">
                 <h2>🛒 내 장바구니</h2>
-                {cartItems.items.length === 0 ? (
+                {cart.items.length === 0 ? (
                     <p className="empty-cart-message">
                         장바구니가 비어있어요. 상품을 담아보세요!
                     </p>
                 ) : (
                     <div className="cart-items-wrapper">
-                        {cartItems.items.map((item) => (
+                        {cart.items.map((item) => (
                             <CartItem
                                 key={item.id}
                                 dispatch={dispatch}
@@ -108,18 +137,34 @@ function ShoppingCart() {
                     </div>
                 )}
                 <div className="cart-summary">
+                    <p
+                        className="clear-cart"
+                        onClick={() => {
+                            dispatch({ type: 'clear-cart' });
+                        }}
+                    >
+                        장바구니 초기화
+                    </p>
                     <h3>총액: {totalAmount.toLocaleString()}원</h3>
-                    {/* 주문하기 버튼 클릭 시 모달 열기 */}
-                    <button className="checkout-button" onClick={openModal}>
-                        주문하기 (모달 열기)
+                    <button
+                        disabled={cart.items.length === 0}
+                        className={`checkout-button ${
+                            cart.items.length === 0 ? 'disabled' : ''
+                        }`}
+                        onClick={openModal}
+                    >
+                        주문하기
                     </button>
                 </div>
             </div>
 
-            {/* 모달 컴포넌트 렌더링 */}
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
-                {/* 모달 안에 들어갈 폼 컴포넌트 */}
-                <OrderForm />
+            <Modal isOpen={cart.isOpen} onClose={closeModal}>
+                <OrderForm
+                    totalAmount={totalAmount}
+                    orderForm={cart.orderForm}
+                    dispatch={dispatch}
+                    onClose={closeModal}
+                />
             </Modal>
         </div>
     );

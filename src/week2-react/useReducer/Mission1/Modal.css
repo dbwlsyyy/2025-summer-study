@@ -20,6 +20,8 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: relative; /* 닫기 버튼 위치 지정을 위해 */
     width: 90%;
+    max-height: 80vh; /* 또는 원하는 높이 */
+    overflow-y: auto;
     max-width: 500px; /* 최대 너비 설정 */
     animation: slideIn 0.3s ease-out forwards; /* 등장 애니메이션 */
 }
