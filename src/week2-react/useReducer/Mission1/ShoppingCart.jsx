@@ -157,7 +157,6 @@ function ShoppingCart() {
                     </button>
                 </div>
             </div>
-
             <Modal isOpen={cart.isOpen} onClose={closeModal}>
                 <OrderForm
                     totalAmount={totalAmount}

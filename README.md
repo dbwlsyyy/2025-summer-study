@@ -37,6 +37,12 @@ useEffect
 useMemo, useCallback, React.memo
 
 -   [memorize 유저 미션](./src/week2-react/useMemo_useCallback/Mission1/MissionUseCallback1.jsx)
--   [활용 실무 미션 - 앱 성능 최적화 (HOC)](./src/week2-react/useMemo_useCallback/Mssion2/MissionUseCallback2.jsx)
+-   [활용 실무 미션 - 앱 성능 최적화](./src/week2-react/useMemo_useCallback/Mssion2/MissionUseCallback2.jsx)
 
-useContext
+useReducer
+
+-   [장바구니 미션](./src/week2-react/useReducer/Mission1/MissionCart.jsx)
+
+component composition
+
+-   [장바구니 미션](composition, children props 활용하여 내부 모달 리팩토링 완료)
