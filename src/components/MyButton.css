@@ -1,0 +1,10 @@
+.btn {
+    margin: 5px;
+}
+
+.btn-mission {
+    background-color: #eee;
+}
+.btn-mission:hover {
+    background-color: #ddd;
+}
