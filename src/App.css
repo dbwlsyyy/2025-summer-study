@@ -43,3 +43,10 @@
 .read-the-docs {
     color: #888;
 }
+#description {
+    color: #888;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 3rem auto;
+    line-height: 2;
+}

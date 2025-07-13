@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
 import './OrderForm.css';
+import useInput from '../../hooks/useInput';
 
+// git commit -m "week2: useInput hook 구현"
 function OrderForm({ totalAmount, dispatch, orderForm, onClose }) {
     const paymentMethod = ['카드', '계좌이체', '카카오페이', '네이버페이'];
-    const [form, setForm] = useState({
-        name: '',
-        address: '',
-        email: '',
-        method: '',
-    });
+    // const [form, setForm] = useState({
+    //     name: '',
+    //     address: '',
+    //     email: '',
+    //     method: '',
+    // });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setForm((prev) => ({
+    //         ...prev,
+    //         [name]: value,
+    //     }));
+    // };
+
+    const nameInput = useInput('');
+    const addressInput = useInput('');
+    const emailInput = useInput('');
+    const methodInput = useInput('');
+
+    const form = {
+        name: nameInput.value,
+        address: addressInput.value,
+        email: emailInput.value,
+        method: methodInput.value,
     };
 
     const handleSubmit = (e) => {
@@ -33,9 +46,8 @@ function OrderForm({ totalAmount, dispatch, orderForm, onClose }) {
                         type="text"
                         id="name"
                         name="name"
-                        value={form.name}
-                        onChange={handleChange}
                         placeholder="이름을 입력하세요"
+                        {...nameInput}
                     />
                 </div>
                 <div className="form-group">
@@ -45,9 +57,8 @@ function OrderForm({ totalAmount, dispatch, orderForm, onClose }) {
                         type="text"
                         id="address"
                         name="address"
-                        value={form.address}
-                        onChange={handleChange}
                         placeholder="주소를 입력하세요"
+                        {...addressInput}
                     />
                 </div>
                 <div className="form-group">
@@ -57,9 +68,8 @@ function OrderForm({ totalAmount, dispatch, orderForm, onClose }) {
                         type="email"
                         id="email"
                         name="email"
-                        value={form.email}
-                        onChange={handleChange}
                         placeholder="이메일을 입력하세요"
+                        {...emailInput}
                     />
                 </div>
                 <div className="form-group">
@@ -70,9 +80,8 @@ function OrderForm({ totalAmount, dispatch, orderForm, onClose }) {
                                 required
                                 type="radio"
                                 name="method"
-                                value={method}
-                                checked={form.method === method}
-                                onChange={handleChange}
+                                checked={methodInput.value === method}  
+                                {...methodInput}
                             />
                             {method}
                         </label>

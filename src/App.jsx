@@ -16,12 +16,18 @@ import UseReducerBank from './week2-react/useReducer/useReducerBank';
 import UseReducerAttendance from './week2-react/useReducer/UseReducerAttendance';
 import MissionCart from './week2-react/useReducer/Mission1/MissionCart';
 import MyButton from './components/MyButton';
+import UseFetchComponent from './week2-react/UseFetchComponent';
 
 function App() {
     return (
         <BrowserRouter>
             <div style={{ padding: 20 }}>
-                <h1>React Practice Lab</h1>
+                <Link
+                    to="/"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                    <h1>React Practice Lab</h1>
+                </Link>
 
                 <nav style={{ marginBottom: 40 }}>
                     <div className="space">
@@ -62,21 +68,25 @@ function App() {
                         <MyButton to="/useReducer-attendance">
                             출석부 실습
                         </MyButton>
+                        <MyButton to="/custom-hook">custom hook 실습</MyButton>
                     </div>
                     <div className="space">
                         <MyButton to="/useReducer-mission-cart" primary>
                             useReducer 장바구니 미션
                         </MyButton>
-                        <MyButton to="/useReducer-mission-wizard" primary>
-                            useReducer Wizard 앱 미션
-                        </MyButton>
-                        <MyButton to="/useReducer-mission-theme" primary>
-                            useReducer 테마 변경 미션
-                        </MyButton>
                     </div>
                 </nav>
 
                 <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <div id="description">
+                                버튼을 클릭하면 여기서 실습 내용을 확인할 수
+                                있습니다!
+                            </div>
+                        }
+                    />
                     <Route path="/timer" element={<UseEffectTimer />} />
                     <Route path="/userList" element={<UseEffectUserList />} />
                     <Route path="/mouseTracker" element={<UseEffectMouse />} />
@@ -120,12 +130,8 @@ function App() {
                         element={<MissionCart />}
                     />
                     <Route
-                        path="/useReducer-mission-wizard"
-                        element={<UseReducerBank />}
-                    />
-                    <Route
-                        path="/useReducer-mission-theme"
-                        element={<UseReducerAttendance />}
+                        path="/custom-hook"
+                        element={<UseFetchComponent />}
                     />
                 </Routes>
             </div>
