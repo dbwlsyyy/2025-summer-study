@@ -80,8 +80,9 @@ function OrderForm({ totalAmount, dispatch, orderForm, onClose }) {
                                 required
                                 type="radio"
                                 name="method"
-                                checked={methodInput.value === method}  
-                                {...methodInput}
+                                value={method}
+                                checked={methodInput.value === method}
+                                onChange={methodInput.onChange}
                             />
                             {method}
                         </label>
